@@ -1,0 +1,86 @@
+
+.login-pagina {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+  background-color: #f5f5f5;
+}
+
+.login-panel {
+  background-color: #FFFFFF;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-panel h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 1.8rem;
+}
+
+.login-redes {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+.login-redes p {
+  margin-bottom: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.login-redes-botones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn-red {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-red.google {
+  background-color: #DB4437;
+  color: #FFFFFF;
+  border-color: #DB4437;
+}
+
+.btn-red.google:hover {
+  background-color: #ae2b1f;
+}
+
+.btn-red.facebook {
+  background-color: #4267B2;
+  color: #FFFFFF;
+  border-color: #4267B2;
+}
+
+.btn-red.facebook:hover {
+  background-color: #314d85;
+}
+
+.btn-red.uabc {
+  background-color: #00733f;
+  color: #FFFFFF;
+  border-color: #00733f;
+}
+
+.btn-red.uabc:hover {
+  background-color: #00562f;
+}
+

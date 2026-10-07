@@ -1,0 +1,158 @@
+
+.contacto-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contacto-hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  align-items: center;
+}
+
+.contacto-texto h1 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.contacto-texto p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.contacto-datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.contacto-datos strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #000;
+}
+
+.contacto-datos p {
+  margin: 0;
+  color: #444;
+}
+
+.contacto-datos a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.contacto-mapa {
+  min-height: 300px;
+  border-radius: 10px;
+}
+
+.contacto-formulario {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contacto-formulario h2 {
+  margin: 0;
+  color: #000;
+}
+
+.contacto-formulario form {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.form-grid label,
+.form-textarea {
+  display: grid;
+  gap: 0.5rem;
+  color: #000;
+  font-weight: 600;
+}
+
+.form-grid input,
+.form-textarea textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+.form-grid input:focus,
+.form-textarea textarea:focus {
+  outline: none;
+  border-color: #000;
+}
+
+.contacto-formulario .btn-accion {
+  justify-self: center;
+  padding: 0.9rem 1.6rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.contacto-faq {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.contacto-faq h2 {
+  margin: 0;
+  color: #000;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.faq-item {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.faq-item h3 {
+  margin: 0;
+  color: #000;
+  font-size: 1.1rem;
+}
+
+.faq-item p {
+  margin: 0;
+  color: #444;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .contacto-container {
+    padding: 2.5rem 1.25rem 3rem;
+  }
+}
+

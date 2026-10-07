@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contáctanos | Gimnasio</title>
+    <link href="../css/style.css" rel="stylesheet" />
+    <link href="../css/contactanos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header-publico">
+      <div class="nav-logo">
+        <a href="index.html">X-AUST</a>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="sucursales.html">Sucursales</a></li>
+        <li><a href="contactanos.html">Contactanos</a></li>
+      </ul>
+
+      <ul class="nav-acciones">
+        <li><a href="login.html">Login</a></li>
+        <li><a href="checkIn.php">Check In</a></li>
+      </ul>
+    </header>
+
+    <main class="contacto-container">
+      <section class="contacto-hero">
+        <div class="contacto-texto">
+          <h1>Hablemos de tus metas</h1>
+          <p>Escríbenos para resolver dudas, agendar tu visita o recibir asesoría personalizada.</p>
+          <div class="contacto-datos">
+            <div>
+              <strong>Teléfono</strong>
+              <p>+52 (686) 123-4567</p>
+            </div>
+            <div>
+              <strong>Correo</strong>
+              <p><a href="mailto:gencinas@uabc.edu.mx">gencinas@uabc.edu.mx</a></p>
+            </div>
+            <div>
+              <strong>Horario</strong>
+              <p>Lun - Vie: 5:00 - 23:00</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contacto-formulario">
+        <h2>Envíanos un mensaje</h2>
+        <form action="mailto:gencinas@uabc.edu.mx" method="post" enctype="text/plain">
+          <div class="form-grid">
+            <label>
+              Nombre
+              <input type="text" name="nombre" required />
+            </label>
+            <label>
+              Correo
+              <input type="email" name="correo" required />
+            </label>
+            <label>
+              Teléfono
+              <input type="tel" name="telefono" />
+            </label>
+            <label>
+              Asunto
+              <input type="text" name="asunto" required />
+            </label>
+          </div>
+          <label class="form-textarea">
+            Mensaje
+            <textarea name="mensaje" rows="5" required></textarea>
+          </label>
+          <button type="submit" class="btn-accion">Enviar mensaje</button>
+        </form>
+      </section>
+
+      <section class="contacto-faq">
+        <h2>Preguntas frecuentes</h2>
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>¿Necesito cita para visitar?</h3>
+            <p>No es obligatorio, pero agenda para garantizar un recorrido guiado y evaluación inicial.</p>
+          </article>
+          <article class="faq-item">
+            <h3>¿Tienen estacionamiento?</h3>
+            <p>Sí, contamos con estacionamiento sin costo en todas las sucursales.</p>
+          </article>
+          <article class="faq-item">
+            <h3>¿Aceptan pases de prueba?</h3>
+            <p>Ofrecemos pases de un día; solicita el tuyo en el formulario o en recepción.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
+

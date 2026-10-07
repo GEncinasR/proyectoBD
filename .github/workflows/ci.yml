@@ -1,0 +1,82 @@
+name: CI Pruebas
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  unitarias:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mysqli
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pytest
+      - run: python -m pytest -q
+        working-directory: pruebas/tests_unitarias
+
+  api:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: SQLMEMO1337
+          MYSQL_DATABASE: PROYECTOFINAL
+        ports: ['3306:3306']
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mysqli
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: sudo npm install -g newman
+      - name: Importar datos de prueba
+        run: mysql -h 127.0.0.1 -u root -pSQLMEMO1337 PROYECTOFINAL < pruebas/datos/PROYECTOFINAL.sql
+      - name: Servir app
+        run: php -S localhost:8000 -t . &
+      - name: Pruebas API
+        run: newman run pruebas/postman/coleccion.json --env-var base_url=http://localhost:8000
+
+  ui:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: SQLMEMO1337
+          MYSQL_DATABASE: PROYECTOFINAL
+        ports: ['3306:3306']
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mysqli
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: pip install pytest pytest-playwright playwright && playwright install --with-deps chromium
+      - name: Importar datos de prueba
+        run: mysql -h 127.0.0.1 -u root -pSQLMEMO1337 PROYECTOFINAL < pruebas/datos/PROYECTOFINAL.sql
+      - name: Servir app
+        run: php -S localhost:8000 -t . &
+      - name: Pruebas UI
+        run: python -m pytest tests_ui -q
+        working-directory: pruebas
+        env:
+          BASE_URL: http://localhost:8000
