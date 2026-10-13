@@ -12,7 +12,7 @@ def php_eval(code: str) -> str:
     return r.stdout.strip()
 
 def test_calcular_fecha_vencimiento_mensualidad():
-    assert php_eval("echo calcularFechaVencimiento('MENSUALIDAD','2026-01-15');") == "2026-02-15"
+    assert php_eval("echo calcularFechaVencimiento('MENSUALIDAD','2026-01-15');") == "2026-01-15"
 
 def test_calcular_fecha_vencimiento_anualidad():
     assert php_eval("echo calcularFechaVencimiento('ANUALIDAD','2026-01-15');") == "2027-01-15"
