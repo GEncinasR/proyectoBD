@@ -29,7 +29,7 @@ def test_login_coach_inexistente(page: Page):
 
 def test_checkin_id_invalido(page: Page):
     page.goto(f"{BASE}/main/checkIn.php")
-    page.fill('input[name="idCliente"]', "999999")
+    page.fill('input[name="idCliente"]', "999#$999")
     page.click('button[type=submit], input[type=submit]')
     expect(page.locator("body")).to_contain_text("No se encontró")
 
